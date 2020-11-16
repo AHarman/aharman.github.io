@@ -1,0 +1,80 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #70ab76;
+}
+
+@mixin depth($depth, $perspective: 1) {
+    transform: translateZ(#{$depth}px) scale(1 + ($depth * -1) / $perspective);
+}
+
+.parallax-container {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective-origin-x: 100%;
+
+    background-color: #55a9fe;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin-x: 100%;
+
+    img {
+        position: absolute;
+    }
+
+    &.sun {
+        @include depth(-10);
+
+        img {
+            width: 100px;
+            top: 100px;
+            right: 100px;
+        }
+    }
+
+    &.hill-foreground {
+        img {
+            top: 400px;
+            width: 100%;
+            min-height: 200px;
+            object-fit: cover;
+        }
+    }
+
+    &.hill-background {
+        @include depth(-1);
+        img {
+            top: 350px;
+            width: 100%;
+            // Need an extra few px to offset scrollbar
+            width: calc(100% + 10px);
+            left: -10px;
+            min-height: 200px;
+        }
+    }
+}
+
+.content-container {
+    top: 600px;
+    position: relative;
+    background-color: #70ab76;
+}
+
+.nameHeader {
+    color: white;
+    position: sticky;
+    top: 50px;
+    left: 50px;
+    margin: 0;
+    z-index: 100;
+    display: inline-block;
+}
