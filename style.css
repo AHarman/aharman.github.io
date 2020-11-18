@@ -1,8 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
-  background-color: #70ab76; }
+  font-family: sans-serif; }
 
 .parallax-container {
   perspective: 1px;
@@ -19,32 +18,55 @@ body {
   bottom: 0;
   left: 0;
   transform-origin-x: 100%; }
-  .parallax-layer img {
-    position: absolute; }
   .parallax-layer.sun {
     transform: translateZ(-10px) scale(11); }
     .parallax-layer.sun img {
       width: 100px;
       top: 100px;
-      right: 100px; }
-  .parallax-layer.hill-foreground img {
-    top: 400px;
+      right: 100px;
+      position: absolute; }
+  .parallax-layer.hill-1 .hill-wrapper {
+    top: 350px;
+    width: 100%;
+    position: relative; }
+  .parallax-layer.hill-1 img {
     width: 100%;
     min-height: 200px;
-    object-fit: cover; }
-  .parallax-layer.hill-background {
+    object-fit: cover;
+    vertical-align: bottom; }
+  .parallax-layer.hill-2 {
     transform: translateZ(-1px) scale(2); }
-    .parallax-layer.hill-background img {
-      top: 350px;
-      width: 100%;
-      width: calc(100% + 10px);
+    .parallax-layer.hill-2 img {
+      top: 300px;
+      min-width: calc(100% + 10px);
       left: -10px;
-      min-height: 200px; }
+      min-height: 200px;
+      position: absolute; }
+  .parallax-layer.hill-3 {
+    transform: translateZ(-2px) scale(3); }
+    .parallax-layer.hill-3 img {
+      top: 250px;
+      min-width: calc(100% + 10px);
+      left: -10px;
+      min-height: 200px;
+      position: absolute; }
 
 .content-container {
-  top: 600px;
-  position: relative;
-  background-color: #70ab76; }
+  background-color: #77bb7d;
+  height: 100vh; }
+  .content-container .content {
+    box-sizing: border-box;
+    padding: 0 50px;
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; }
+    .content-container .content a {
+      flex: 0 1 200px;
+      max-width: 25%; }
+      .content-container .content a img {
+        object-fit: contain; }
 
 .nameHeader {
   color: white;

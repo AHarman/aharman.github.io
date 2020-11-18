@@ -2,7 +2,6 @@ body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background-color: #70ab76;
 }
 
 @mixin depth($depth, $perspective: 1) {
@@ -26,11 +25,6 @@ body {
     bottom: 0;
     left: 0;
     transform-origin-x: 100%;
-
-    img {
-        position: absolute;
-    }
-
     &.sun {
         @include depth(-10);
 
@@ -38,35 +32,72 @@ body {
             width: 100px;
             top: 100px;
             right: 100px;
+            position: absolute;
         }
     }
 
-    &.hill-foreground {
+    &.hill-1 {
+        .hill-wrapper {
+            top: 350px;
+            width: 100%;
+            position: relative;
+        }
         img {
-            top: 400px;
             width: 100%;
             min-height: 200px;
             object-fit: cover;
+            // Needed to avoid space dedicated to character danglers
+            vertical-align: bottom;
         }
     }
 
-    &.hill-background {
+    &.hill-2 {
         @include depth(-1);
         img {
-            top: 350px;
-            width: 100%;
+            top: 300px;
             // Need an extra few px to offset scrollbar
-            width: calc(100% + 10px);
+            min-width: calc(100% + 10px);
             left: -10px;
             min-height: 200px;
+            position: absolute;
+        }
+    }
+
+    &.hill-3 {
+        @include depth(-2);
+        img {
+            top: 250px;
+            // Need an extra few px to offset scrollbar
+            min-width: calc(100% + 10px);
+            left: -10px;
+            min-height: 200px;
+            position: absolute;
         }
     }
 }
 
 .content-container {
-    top: 600px;
-    position: relative;
-    background-color: #70ab76;
+    background-color: #77bb7d;
+    height: 100vh;
+    .content {
+        box-sizing: border-box;
+        padding: 0 50px;
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+
+        a {
+            flex: 0 1 200px;
+            max-width: 25%;
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
 }
 
 .nameHeader {
