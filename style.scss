@@ -1,5 +1,8 @@
 html {
     font-size: 20px;
+    // Needed to enable parallax on the body element.
+    // Need to do parallax on the body to allow keyboard scrolling
+    overflow: hidden;
 }
 
 body {
