@@ -17,12 +17,14 @@ a {
     }
 }
 
-@mixin parallax-depth($depth, $perspective: 1) {
-    transform: translateZ(#{$depth}px) scale(1 + ($depth * -1) / $perspective);
+$perspective: 2;
+
+@mixin parallax-depth($depth) {
+    transform: translateZ(-#{$depth}px) scale(1 + $depth / $perspective);
 }
 
 .parallax-container {
-    perspective: 1px;
+    perspective: #{$perspective}px;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
@@ -39,7 +41,7 @@ a {
     left: 0;
     transform-origin-x: 100%;
     &.sun {
-        @include parallax-depth(-10);
+        @include parallax-depth(10);
 
         .sun-image {
             width: 100px;
@@ -50,14 +52,14 @@ a {
     }
 
     &.hill-2 {
-        @include parallax-depth(-1);
+        @include parallax-depth(1);
         .hill-image {
             top: 300px;
         }
     }
 
     &.hill-3 {
-        @include parallax-depth(-2);
+        @include parallax-depth(2);
         .hill-image {
             top: 250px;
         }
@@ -70,10 +72,18 @@ a {
         width: 100%;
         position: absolute;
     }
+
     .hill-image {
         width: 100%;
         // Needed to avoid space dedicated to character danglers
         vertical-align: bottom;
+    }
+
+    .dog-image {
+        position: absolute;
+        right: 30%;
+        top: 300px;
+        z-index: 50;
     }
 }
 
@@ -110,24 +120,34 @@ a {
     z-index: 100;
     display: inline-block;
     font-size: 2rem;
+
+    @media (max-width: 550px) {
+        position: absolute;
+    }
 }
 
 .links {
     display: flex;
     justify-content: space-between;
+    padding-top: 20px;
 
     .links-item {
+        $raise-amount: 20px;
+
         display: block;
         flex: 1 1 0;
         max-width: 25%;
         text-align: center;
+        position: relative;
+        bottom: 0;
+        padding-top: $raise-amount;
 
-        transition: 0.4s ease-out;
-        transition-property: max-width;
+        transition: 0.3s ease-out;
+        transition-property: bottom;
 
         &:hover, &:focus {
             text-decoration: underline;
-            max-width: 30%;
+            bottom: $raise-amount;
         }
 
         img {
