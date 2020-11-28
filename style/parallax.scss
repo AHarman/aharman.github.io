@@ -1,4 +1,4 @@
-$perspective: 2;
+@import 'values';
 
 @mixin parallax-depth($depth) {
     transform: translateZ(-#{$depth}px) scale(1 + $depth / $perspective);
@@ -21,6 +21,11 @@ $perspective: 2;
     bottom: 0;
     left: 0;
     transform-origin-x: 100%;
+
+    // Not very performant on many mobile devices.
+    @media (max-width: $mobile-breakpoint) {
+        transform: unset !important;
+    }
 }
 
 .parallax-group {
