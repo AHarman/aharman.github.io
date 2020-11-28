@@ -29,7 +29,6 @@ a {
 
 .content-container {
     background-color: #77bb7d;
-    // height: 100vh;
     // Needed to cover up where the boxes meet
     margin-top: -1px;
 
@@ -39,13 +38,22 @@ a {
         max-width: 1024px;
         width: 100%;
         margin: 0 auto;
+        @media (max-width: $mobile-breakpoint) {
+            padding: 50px 30px;
+        }
     }
 }
 
 .links {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 0;
+    grid-column-gap: 10px;
+
+    @media (max-width: $mobile-small-breakpoint) {
+        flex-direction: column;
+    }
 
     .links-item {
         $raise-amount: 20px;
@@ -53,33 +61,43 @@ a {
         display: block;
         flex: 1 1 0;
         max-width: 25%;
+        min-width: 8ch;
         text-align: center;
         position: relative;
-
         color: white;
-        &:visited {
-            color: white;
-        }
-
-        font-size: 28px;
-        @media (max-width: $mobile-breakpoint) {
-            font-size: 24px;
-        }
 
         bottom: 0;
         padding-top: $raise-amount;
         transition: 0.3s ease-out;
         transition-property: bottom;
 
+        font-size: 28px;
+
+        &:visited {
+            color: white;
+        }
+
         &:hover, &:focus {
             text-decoration: underline;
             bottom: $raise-amount;
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 24px;
+        }
+
+        @media (max-width: $mobile-small-breakpoint) {
+            max-width: 50%;
         }
 
         img {
             object-fit: contain;
             margin-bottom: 30px;
             width: 100%;
+
+            @media (max-width: $mobile-small-breakpoint) {
+                margin-bottom: 10px;
+            }
         }
     }
 }

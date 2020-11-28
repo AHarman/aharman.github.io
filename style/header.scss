@@ -4,14 +4,19 @@
 .downs-header {
     height: 100vmin;
 
-    .sun-layer {
-        @include parallax-depth(10);
+    .sun-image {
+        width: 100px;
+        top: 100px;
+        right: 10%;
+        position: absolute;
 
-        .sun-image {
-            width: 100px;
+        @media (max-width: $mobile-breakpoint) {
+            width: 50px;
+            top: 50px;
+        }
+
+        @media (max-width: $mobile-small-breakpoint) {
             top: 100px;
-            right: 10%;
-            position: absolute;
         }
     }
 
@@ -21,18 +26,16 @@
         position: absolute;
     }
 
+    .sun-layer {
+        @include parallax-depth(10);
+    }
+
     .hill-2-layer {
         @include parallax-depth(1);
-        .hill-image {
-            bottom: 0;
-        }
     }
 
     .hill-3-layer {
         @include parallax-depth(2);
-        .hill-image {
-            bottom: 0;
-        }
     }
 
     .hill-2-layer, .hill-3-layer {
@@ -56,6 +59,7 @@
 
         @media (max-width: $mobile-breakpoint) {
             position: absolute;
+            left: 30px;
         }
     }
 }
