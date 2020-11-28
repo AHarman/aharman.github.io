@@ -1,0 +1,29 @@
+$perspective: 2;
+
+@mixin parallax-depth($depth) {
+    transform: translateZ(-#{$depth}px) scale(1 + $depth / $perspective);
+}
+
+.parallax-container {
+    perspective: #{$perspective}px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective-origin-x: 100%;
+
+    background-color: #55a9fe;
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin-x: 100%;
+}
+
+.parallax-group {
+    position: relative;
+    transform-style: preserve-3d;
+}
