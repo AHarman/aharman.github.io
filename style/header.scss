@@ -10,9 +10,15 @@
         .sun-image {
             width: 100px;
             top: 100px;
-            right: 100px;
+            right: 10%;
             position: absolute;
         }
+    }
+
+    .hill-image {
+        width: 100%;
+        bottom: 0;
+        position: absolute;
     }
 
     .hill-2-layer {
@@ -29,31 +35,13 @@
         }
     }
 
-    .hill-1-layer {
-
-        .hill-image {
-            width: 100%;
-            bottom: 0;
-            position: absolute;
-        }
-
-        .dog-image {
-            position: absolute;
-            right: 30%;
-            bottom: 30%;
-            z-index: 50;
-        }
-    }
-
     .hill-2-layer, .hill-3-layer {
         .hill-image {
             // Need an extra few px to offset scrollbar
             left: -10px;
             width: calc(100% + 10px);
-            min-height: 200px;
             object-fit: contain;
             object-position: bottom;
-            position: absolute;
         }
     }
 
