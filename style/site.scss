@@ -48,16 +48,17 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    margin: 20px 0;
     grid-column-gap: 10px;
+    $raise-amount: 20px;
+
 
     @media (max-width: $mobile-small-breakpoint) {
         flex-direction: column;
+        grid-row-gap: #{$raise-amount * 2};
     }
 
     .links-item {
-        $raise-amount: 20px;
-
         display: block;
         flex: 1 1 0;
         max-width: 25%;
@@ -67,19 +68,18 @@ a {
         color: white;
 
         bottom: 0;
-        padding-top: $raise-amount;
+        margin-top: $raise-amount;
         transition: 0.3s ease-out;
         transition-property: bottom;
 
         font-size: 28px;
 
-        &:visited {
-            color: white;
-        }
-
-        &:hover, &:focus {
+        &:hover, &:focus{
             text-decoration: underline;
-            bottom: $raise-amount;
+
+            @media (min-width: #{$mobile-small-breakpoint + 1}) and (hover: hover) {
+                bottom: $raise-amount;
+            }
         }
 
         @media (max-width: $mobile-breakpoint) {
