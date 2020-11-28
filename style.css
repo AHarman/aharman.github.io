@@ -4,6 +4,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   perspective-origin-x: 100%;
+  perspective-origin: bottom right;
   background-color: #55a9fe; }
 
 .parallax-layer {
@@ -34,17 +35,20 @@
         top: 50px; } }
     @media (max-width: 400px) {
       .downs-header .sun-image {
-        top: 100px; } }
+        top: 125px; } }
   .downs-header .hill-image {
     width: 100%;
     bottom: 0;
     position: absolute; }
   .downs-header .sun-layer {
-    transform: translateZ(-10px) scale(6); }
+    transform: translateZ(-10px) scale(6);
+    transform-origin: bottom right; }
   .downs-header .hill-2-layer {
-    transform: translateZ(-1px) scale(1.5); }
+    transform: translateZ(-1px) scale(1.5);
+    transform-origin: bottom right; }
   .downs-header .hill-3-layer {
-    transform: translateZ(-2px) scale(2); }
+    transform: translateZ(-2px) scale(2);
+    transform-origin: bottom right; }
   .downs-header .hill-2-layer .hill-image, .downs-header .hill-3-layer .hill-image {
     left: -10px;
     width: calc(100% + 10px);
@@ -98,11 +102,12 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  margin: 20px 0;
   grid-column-gap: 10px; }
   @media (max-width: 400px) {
     .links {
-      flex-direction: column; } }
+      flex-direction: column;
+      grid-row-gap: 40px; } }
   .links .links-item {
     display: block;
     flex: 1 1 0;
@@ -112,15 +117,15 @@ a {
     position: relative;
     color: white;
     bottom: 0;
-    padding-top: 20px;
+    margin-top: 20px;
     transition: 0.3s ease-out;
     transition-property: bottom;
     font-size: 28px; }
-    .links .links-item:visited {
-      color: white; }
     .links .links-item:hover, .links .links-item:focus {
-      text-decoration: underline;
-      bottom: 20px; }
+      text-decoration: underline; }
+      @media (min-width: 401px) and (hover: hover) {
+        .links .links-item:hover, .links .links-item:focus {
+          bottom: 20px; } }
     @media (max-width: 768px) {
       .links .links-item {
         font-size: 24px; } }
