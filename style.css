@@ -23,25 +23,28 @@
 
 .downs-header {
   height: 100vmin; }
-  .downs-header .sun-layer {
-    transform: translateZ(-10px) scale(6); }
-    .downs-header .sun-layer .sun-image {
-      width: 100px;
-      top: 100px;
-      right: 10%;
-      position: absolute; }
+  .downs-header .sun-image {
+    width: 100px;
+    top: 100px;
+    right: 10%;
+    position: absolute; }
+    @media (max-width: 768px) {
+      .downs-header .sun-image {
+        width: 50px;
+        top: 50px; } }
+    @media (max-width: 400px) {
+      .downs-header .sun-image {
+        top: 100px; } }
   .downs-header .hill-image {
     width: 100%;
     bottom: 0;
     position: absolute; }
+  .downs-header .sun-layer {
+    transform: translateZ(-10px) scale(6); }
   .downs-header .hill-2-layer {
     transform: translateZ(-1px) scale(1.5); }
-    .downs-header .hill-2-layer .hill-image {
-      bottom: 0; }
   .downs-header .hill-3-layer {
     transform: translateZ(-2px) scale(2); }
-    .downs-header .hill-3-layer .hill-image {
-      bottom: 0; }
   .downs-header .hill-2-layer .hill-image, .downs-header .hill-3-layer .hill-image {
     left: -10px;
     width: calc(100% + 10px);
@@ -57,7 +60,8 @@
     font-size: 2rem; }
     @media (max-width: 768px) {
       .downs-header .nameHeader {
-        position: absolute; } }
+        position: absolute;
+        left: 30px; } }
 
 html {
   font-size: 24px;
@@ -86,32 +90,47 @@ a {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto; }
+    @media (max-width: 768px) {
+      .content-container .content {
+        padding: 50px 30px; } }
 
 .links {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0; }
+  align-items: center;
+  padding: 20px 0;
+  grid-column-gap: 10px; }
+  @media (max-width: 400px) {
+    .links {
+      flex-direction: column; } }
   .links .links-item {
     display: block;
     flex: 1 1 0;
     max-width: 25%;
+    min-width: 8ch;
     text-align: center;
     position: relative;
     color: white;
-    font-size: 28px;
     bottom: 0;
     padding-top: 20px;
     transition: 0.3s ease-out;
-    transition-property: bottom; }
+    transition-property: bottom;
+    font-size: 28px; }
     .links .links-item:visited {
       color: white; }
-    @media (max-width: 768px) {
-      .links .links-item {
-        font-size: 24px; } }
     .links .links-item:hover, .links .links-item:focus {
       text-decoration: underline;
       bottom: 20px; }
+    @media (max-width: 768px) {
+      .links .links-item {
+        font-size: 24px; } }
+    @media (max-width: 400px) {
+      .links .links-item {
+        max-width: 50%; } }
     .links .links-item img {
       object-fit: contain;
       margin-bottom: 30px;
       width: 100%; }
+      @media (max-width: 400px) {
+        .links .links-item img {
+          margin-bottom: 10px; } }
