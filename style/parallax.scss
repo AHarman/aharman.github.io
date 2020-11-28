@@ -2,6 +2,7 @@
 
 @mixin parallax-depth($depth) {
     transform: translateZ(-#{$depth}px) scale(1 + $depth / $perspective);
+    transform-origin: bottom right;
 }
 
 .parallax-container {
@@ -10,6 +11,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     perspective-origin-x: 100%;
+    perspective-origin: bottom right;
 
     background-color: #55a9fe;
 }
