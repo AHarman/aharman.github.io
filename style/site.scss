@@ -25,10 +25,6 @@ a {
     &:hover, &:focus {
         text-decoration: underline;
     }
-
-    &:visited {
-        color: white;
-    }
 }
 
 .content-container {
@@ -59,6 +55,12 @@ a {
         max-width: 25%;
         text-align: center;
         position: relative;
+
+        color: white;
+        &:visited {
+            color: white;
+        }
+
         font-size: 28px;
         @media (max-width: $mobile-breakpoint) {
             font-size: 24px;

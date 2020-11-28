@@ -76,8 +76,6 @@ a {
   text-decoration: none; }
   a:hover, a:focus {
     text-decoration: underline; }
-  a:visited {
-    color: white; }
 
 .content-container {
   background-color: #77bb7d;
@@ -99,11 +97,14 @@ a {
     max-width: 25%;
     text-align: center;
     position: relative;
+    color: white;
     font-size: 28px;
     bottom: 0;
     padding-top: 20px;
     transition: 0.3s ease-out;
     transition-property: bottom; }
+    .links .links-item:visited {
+      color: white; }
     @media (max-width: 768px) {
       .links .links-item {
         font-size: 24px; } }
