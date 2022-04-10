@@ -1,7 +1,7 @@
 # Just a little landing page
 I've got some domain names that I should point to _something_, so I figured I'd put together a little landing page.
 
-[Link to the page can be found here](alexharman.com)
+[Link to the page can be found here](https://alexharman.com)
 
 Nothing complicated here. Just a bit of [CSS parallax](https://keithclark.co.uk/articles/pure-css-parallax-websites/).
 
